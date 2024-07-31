@@ -1,0 +1,128 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black; /* Changed text color to black for better readability */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-left {
+  font-family: "Bangers", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin-left: 1em;
+  font-size: 2em;
+  font-weight: 100;
+  color: #6e8efb; /* Marvel red color */
+  text-shadow: 1px 1px 1px rgba(193, 156, 229, 0.5);
+}
+
+.nav-right {
+  margin-right: 5px;
+}
+
+.nav-right nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right nav ul li {
+  margin-left: 2em;
+}
+
+.nav-right nav ul li a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-right nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: black;
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.nav-right nav ul li a:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.nav-right nav ul li a:hover {
+  color: #007fbf;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0.5em;
+  }
+
+  .nav-left {
+    font-size: 1.75em;
+  }
+
+  .nav-right nav ul {
+    flex-direction: row;
+  }
+
+  .nav-right nav ul li {
+    margin-left: 1.5em;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .navbar {
+    position: sticky;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    z-index: 1;
+  }
+
+  .nav-left {
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-bottom: 0.2em; /* Reduced margin-bottom */
+    margin-left: 0;
+  }
+
+  .nav-right {
+    margin-top: 0.2em; /* Reduced margin-top */
+    margin-right: 0;
+  }
+
+  .nav-right nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-right nav ul li {
+    margin: 0;
+    margin-bottom: 0.3em;
+    padding: 10px; /* Reduced margin-bottom */
+  }
+}

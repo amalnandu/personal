@@ -1,0 +1,128 @@
+.skill-outer {
+    overflow: hidden;
+    background-color: #f4f4f9;
+    padding: 30px 10px; /* Reduced padding for smaller screens */
+    border-radius: 15px;
+    margin: 1em; /* Reduced margin for smaller screens */
+    font-family: "DM Sans", sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    position: relative; /* Position relative to contain the absolutely positioned images */
+    height: auto; /* Adjust height to fit content */
+}
+
+.skill-head {
+    padding-bottom: 30px;
+    font-size: 1.5rem; /* Reduced font size for smaller screens */
+    color: #6e8efb; /* Adjusted color to match the design */
+}
+
+.skill-body {
+    width: 100%;
+    padding-top: 1em; /* Reduced padding at the top */
+    display: grid; /* Use grid layout for non-overlapping images */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid columns */
+    gap: 15px; /* Space between images */
+    position: relative; /* Position relative for absolute positioning of images */
+    padding-bottom: 20px; /* Padding for spacing at the bottom */
+}
+
+.skill-body img {
+    width: 70px; /* Set a uniform size for all images */
+    height: 70px;
+    border-radius: 12px; /* Rounded corners for images */
+    position: relative; /* Relative positioning for unique animations */
+    animation: oscillate-1 3s ease-in-out infinite; /* Default animation */
+}
+
+/* Unique oscillation animations */
+@keyframes oscillate-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes oscillate-2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes oscillate-3 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes oscillate-4 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Assign unique animations to each image */
+.skill-body img:nth-child(1) {
+    animation: oscillate-1 3s ease-in-out infinite;
+}
+
+.skill-body img:nth-child(2) {
+    animation: oscillate-2 3s ease-in-out infinite;
+}
+
+.skill-body img:nth-child(3) {
+    animation: oscillate-3 3s ease-in-out infinite;
+}
+
+.skill-body img:nth-child(4) {
+    animation: oscillate-4 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .skill-head {
+        font-size: 1.25rem; /* Further reduced font size for small screens */
+    }
+    
+    .skill-body img {
+        width: 50px; /* Adjust image size for smaller screens */
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-head {
+        font-size: 1rem; /* Reduced font size for very small screens */
+    }
+    
+    .skill-body img {
+        width: 40px; /* Further adjust image size for very small screens */
+        height: 40px;
+    }
+}
