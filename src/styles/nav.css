@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  z-index: 1000;
+  z-index: 1000; /* Ensures navbar is on top of other content */
   font-family: "Poppins", sans-serif;
 }
 
@@ -26,6 +26,21 @@
   font-weight: 100;
   color: #6e8efb; /* Marvel red color */
   text-shadow: 1px 1px 1px rgba(193, 156, 229, 0.5);
+  text-decoration: none;
+}
+
+
+
+.nav-left a{
+  font-family: "Bangers", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin-left: 1em;
+  font-size: 1em;
+  font-weight: 100;
+  color: #6e8efb; /* Marvel red color */
+  text-shadow: 1px 1px 1px rgba(193, 156, 229, 0.5);
+  text-decoration: none;
 }
 
 .nav-right {
@@ -100,7 +115,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5em;
-    z-index: 1;
+    z-index: 1000; /* Ensure navbar is on top of other content */
   }
 
   .nav-left {

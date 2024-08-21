@@ -1,6 +1,4 @@
-
-
-.outer{
+.outer {
   /* background: linear-gradient(45deg,#eae6e6,#e0d4e7e9,#f7f5f7); */
   padding-top: 4em;
 }
@@ -27,7 +25,7 @@
   border-radius: 20px;
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: 10; /* Consistent z-index across all screens */
   animation: drop 1s forwards ease, swing 3.5s infinite ease-in-out 1s;
   transform-origin: top center;
 }
@@ -63,45 +61,110 @@
   height: 30vh;
 }
 
+.hero-button {
+  padding: 18px 29px;
+  font-size: 1rem;
+  color: #fdf8f7;
+  background: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 20; /* Consistent z-index across all screens */
+  position: relative;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover {
+  background: rgb(89, 141, 205);
+  opacity: 1;
+  color: rgb(255, 255, 255);
+  z-index: 30; /* Ensure button is above other content */
+  border-color: black;
+}
+
+/* Media Queries */
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1em;
+    z-index: 5; /* Ensure the title is above other content but below navbar */
   }
 
   .amal img {
-    height: 10px; /* Smaller size for very small screens */
+    height: 20vh; /* Adjusted size for small screens */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0.5px 1px 1px rgba(229, 224, 224, 0.7);
+    z-index: 10; /* Ensure the image is above other content but below navbar */
   }
 
-  .outer{
-    /* background: linear-gradient(45deg,#eae6e6,#e0d4e7e9,#f7f5f7); */
-    padding-top:  5px;
+  .outer {
+    padding-top: 1em; /* Reduced padding for small screens */
+  }
+
+  .hero {
+    height: auto; /* Adjust height to fit content */
+    padding: 1em; /* Reduced padding */
+    margin: 0.5em; /* Reduced margin */
+    overflow: visible; /* Ensure content is visible */
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem; /* Smaller subtitle size */
+    margin-bottom: 1.5em; /* Reduced margin for better fit */
+  }
+
+  .hero-button {
+    z-index: 15; /* Ensure button is below navbar */
+    padding: 12px 20px; /* Adjusted padding */
+    font-size: 0.9rem; /* Smaller font size for better fit */
+  }
+
+  .spiderman img {
+    height: 20vh; /* Adjusted height for smaller screens */
+    z-index: 10; /* Ensure it's below navbar */
+  }
+}
+
+@media (max-width: 780px) {
+  .amal img {
+    height: 30vh;
+    position: absolute;
+    bottom: -10px; /* Adjusted for consistent bottom spacing */
+    right: -30px;
+    box-shadow: 0.5px 1px 1px rgba(229, 224, 224, 0.7);
   }
 }
 
 @media (min-width: 768px) {
   .spiderman img {
     height: 40vh;
+    z-index: 10; /* Consistent z-index across medium screens */
   }
 
   .hero-title {
     white-space: normal;
     font-size: 2.5rem;
+    z-index: 25; /* Ensure the title is above other content */
   }
 
   .amal img {
     height: 50px; /* Medium size for tablets and small screens */
+    z-index: 10; /* Ensure it's above other content */
   }
-
-  
 }
 
 @media (min-width: 992px) {
   .spiderman img {
     height: 50vh;
+    z-index: 10; /* Consistent z-index across large screens */
   }
 
   .amal img {
     height: 40vh; /* Larger size for desktops and larger screens */
+    z-index: 10; /* Consistent z-index across large screens */
   }
 }
 
@@ -115,7 +178,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-shadow: 0.5px 1px 1px rgba(229, 224, 224, 0.7); 
-  z-index: 0;
+  z-index: 25; /* Ensure the title is above other content */
   font-size: 3rem;
   margin-bottom: 20px;
   width: fit-content;
@@ -124,106 +187,4 @@
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 40px;
-}
-
-.hero-button {
-  padding: 18px 29px;
-  font-size: 1rem;
-  color: #fdf8f7;
-  background: rgb(0, 0, 0);
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  z-index: 100;
-  position: relative;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.hero-button:hover {
-  background: rgb(89, 141, 205) ;
-  opacity:1;
-  color: rgb(255, 255, 255);
-  z-index: 1010;
-  border-color: black;
-
-
- 
-}
-
-.amal {
-  position: absolute;
-  bottom: -10px; /* Adjusted for consistent bottom spacing */
-  right: 10px;
-  z-index: 1;
-  animation: reveal 1s forwards ease;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.amal img {
-  height: 50vh; /* Default size for the image */
-
-}
-
-@media (max-width:780px ) {
-  .amal img{
-    height: 30vh;
-    position: absolute;
-  bottom: -10px; /* Adjusted for consistent bottom spacing */
-  right: -30px;
-  box-shadow: 0.5px 1px 1px rgba(229, 224, 224, 0.7); 
-  }
-}
-
-
-
-@media (max-width: 600px) {
-  .outer {
-    padding-top: 1em; /* Reduced padding for small screens */
-  }
-
-  .hero {
-    height: auto; /* Adjust height to fit content */
-    padding: 1em; /* Reduced padding */
-    margin: 0.5em; /* Reduced margin */
-    overflow: visible; /* Ensure content is visible */
-  }
-
-  .hero-title {
-    font-size: 1.5rem; /* Smaller font size for small screens */
-    margin-bottom: 1em; /* Reduced margin for better fit */
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem; /* Smaller subtitle size */
-    margin-bottom: 1.5em; /* Reduced margin for better fit */
-  }
-
-  .hero-button {
-    padding: 12px 20px; /* Adjusted padding */
-    font-size: 0.9rem; /* Smaller font size for better fit */
-  }
-
-  .spiderman img {
-    height: 20vh; /* Adjusted height for smaller screens */
-    z-index: 50;
-  }
-
-  .amal img {
-    height: 20vh; /* Adjusted height for small screens */
-    position: absolute;
-    bottom: 0; /* Adjusted bottom positioning */
-    right: 0; /* Adjusted right positioning */
-    box-shadow: 0.5px 1px 1px rgba(229, 224, 224, 0.7);
-  }
 }
